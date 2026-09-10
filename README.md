@@ -2,7 +2,7 @@
 
 <!-- mirror-seo:start -->
 
-**MCP server for delivery schedules, milestones and due dates.** Dated deliverables against a quote or a work order, and what is late as at any date you name.
+**MCP server for delivery schedules, milestones and due dates: produces a dated delivery schedule document.** Dated deliverables against a quote or a work order, and what is late as at any date you name.
 
 Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
 
