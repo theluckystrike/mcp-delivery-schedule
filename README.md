@@ -1,13 +1,45 @@
 # mcp-delivery-schedule
 
+<!-- mirror-seo:start -->
+
+**MCP server for delivery schedules, milestones and due dates.** Dated deliverables against a quote or a work order, and what is late as at any date you name.
+
+Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
+
+## Install
+
+**Hosted, nothing to install.** Point an MCP client at `https://mcp.zovo.one/mcp/delivery-schedule` over streamable-http and send `Authorization: Bearer <token>`, where the token is a Pro key or a free anonymous one from <https://mcp.zovo.one/mcp/token>.
+
+**Claude Desktop, one click.** Download `delivery-schedule.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it.
+
+**From source.** The mirror is self-contained: every `@theluckystrike/*` dependency is vendored, so a fresh clone builds with no extra setup.
+
+```sh
+git clone https://github.com/theluckystrike/mcp-delivery-schedule.git
+cd mcp-delivery-schedule
+npm install && npm run build
+```
+
+Then point your client at the built entry point:
+
+```json
+{
+  "mcpServers": {
+    "delivery-schedule": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-delivery-schedule/dist/index.js"]
+    }
+  }
+}
+```
+
+> `@theluckystrike/mcp-delivery-schedule` is **not published on npm yet**, so an `npx -y @theluckystrike/mcp-delivery-schedule` command will fail. The three paths above are the working ones and each is exercised by CI.
+
 ![delivery-schedule demo](https://raw.githubusercontent.com/theluckystrike/mcp-servers/main/assets/demo-delivery-schedule.gif)
-
-**One-click install:** download `delivery-schedule.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it in Claude Desktop.
-
-**Hosted endpoint (no install):** `https://mcp.zovo.one/mcp/delivery-schedule` (streamable-http; send `Authorization: Bearer <Pro key or anonymous token from https://mcp.zovo.one/mcp/token>`).
 
 Read-only mirror of [mcp-servers/servers/delivery-schedule](https://github.com/theluckystrike/mcp-servers/tree/main/servers/delivery-schedule). See [MIRROR.md](MIRROR.md).
 
+<!-- mirror-seo:end -->
 
 Dated deliverables against a quote, a work order or a change order. Each one carries what
 is being handed over, the day it is due, its value in minor units, and a status that moves
