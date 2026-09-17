@@ -12,8 +12,8 @@
 //
 // Asserts the invariants of servers/delivery-schedule/SPEC.md that a test can check
 // without judgement: one version number across package.json, src/version.ts, serverInfo
-// and all four registry manifests; the remotes rule (this server is stdio only and must
-// advertise no remote until it is hosted); JSON-RPC-only stdout; tool-description hygiene;
+// and all four registry manifests; the remotes rule (the mcpb manifest carries
+// remotes.json now that the hosted route exists, the stdio-only names carry none); JSON-RPC-only stdout; tool-description hygiene;
 // the free/Pro tier switch; that nothing outside this server's own directory is written;
 // and that the invoice engine is imported rather than restated. It never asserts a number
 // a human chose; those live in test/unit.test.mjs.
@@ -318,7 +318,7 @@ test.skip("the estate lists this server everywhere a new server has to be regist
     ["scripts/build-mcpb.sh", /^\s*\[delivery-schedule\]="/m, "DISPLAY_NAME"],
     ["scripts/build-mcpb.sh", /^\s*\[delivery-schedule\]='\[/m, "KEYWORDS"],
     ["scripts/sync-mirrors.sh", /^ALL_SERVERS="[^"]*\bdelivery-schedule\b/m, "ALL_SERVERS"],
-    ["scripts/sync-mirrors.sh", /^\s*delivery-schedule\)\s*echo/m, "topics_for"],
+    ["scripts/mirror-seo.py", /^\s*"delivery-schedule":/m, "mirror-seo CAPABILITY"],
     ["scripts/build-pages.mjs", /const ids = \[[^\]]*"delivery-schedule"/, "page ids"],
     ["scripts/gen-spec.mjs", /"delivery-schedule"/, "SPEC generator"],
     ["servers/office-suite/src/index.ts", /id: "delivery-schedule"/, "office-suite CHILDREN"],

@@ -43,6 +43,7 @@ Read-only mirror of [mcp-servers/servers/delivery-schedule](https://github.com/t
 
 <!-- mirror-seo:end -->
 
+**In the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.theluckystrike%2Fdelivery-schedule/versions/latest)** (`io.github.theluckystrike/delivery-schedule`).
 Dated deliverables against a quote, a work order or a change order. Each one carries what
 is being handed over, the day it is due, its value in minor units, and a status that moves
 planned to in progress to delivered to accepted, every step with the day it actually
